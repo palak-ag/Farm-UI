@@ -1,5 +1,7 @@
 import 'package:farm_ui/dummydata/data.dart';
+import 'package:farm_ui/pages/add_farm.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -91,7 +93,9 @@ class HomeScreenBody extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton.extended(
         backgroundColor: Colors.green[400],
-        onPressed: () {},
+        onPressed: () {
+          type == category.Farm ? Get.to(() => AddFarm()) : print("Water");
+        },
         icon: Icon(Icons.add),
         label: Text("Add ${type == category.Farm ? "Farm" : "Water Supply"}"),
       ),
