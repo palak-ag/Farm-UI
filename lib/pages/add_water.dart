@@ -1,8 +1,8 @@
 import '../widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
-class AddFarm extends StatelessWidget {
-  const AddFarm({Key? key}) : super(key: key);
+class AddWaterSupply extends StatelessWidget {
+  const AddWaterSupply({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,13 +25,17 @@ class AddFarm extends StatelessWidget {
                   children: [
                     SizedBox(height: 16),
                     Text(
-                      "Enter the details of the new Farm",
+                      """
+Enter the details of the new \nWater Supply""",
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 22,
                       ),
                     ),
                     SizedBox(height: 16),
-                    Container(height: 630 * heightFactor, child: AddFarmForm()),
+                    Container(
+                        height: 630 * heightFactor,
+                        child: AddWaterSupplyForm()),
                   ],
                 ),
               ),
@@ -43,8 +47,8 @@ class AddFarm extends StatelessWidget {
   }
 }
 
-class AddFarmForm extends StatelessWidget {
-  const AddFarmForm({
+class AddWaterSupplyForm extends StatelessWidget {
+  const AddWaterSupplyForm({
     Key? key,
   }) : super(key: key);
 
@@ -91,7 +95,7 @@ class AddFarmForm extends StatelessWidget {
           ),
           Spacer(flex: 2),
           Text(
-            "Crop : ",
+            "Type : ",
             style: TextStyle(
               fontSize: 22,
             ),
