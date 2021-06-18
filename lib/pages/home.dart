@@ -1,5 +1,6 @@
 import 'package:farm_ui/dummydata/data.dart';
 import 'package:farm_ui/pages/add_farm.dart';
+import 'package:farm_ui/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,6 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
+        drawer: HomeSidebar(username: "User"),
         appBar: AppBar(
           backgroundColor: Colors.green[400],
           title: Text("Hi User"),
