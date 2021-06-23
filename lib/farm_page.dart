@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 import './tabs/bottom/advisory.dart';
 import './tabs/bottom/device.dart';
+import 'dummydata/data.dart';
 
-class Home extends StatefulWidget {
-  Home({Key? key, required this.title}) : super(key: key);
+class FarmDevices extends StatefulWidget {
+  final CATEGORY category;
+  FarmDevices({Key? key, required this.title, required this.category})
+      : super(key: key);
 
   final String title;
 
   @override
-  _HomeState createState() => _HomeState();
+  _FarmDevicesState createState() => _FarmDevicesState();
 }
 
-class _HomeState extends State<Home> {
+class _FarmDevicesState extends State<FarmDevices> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(

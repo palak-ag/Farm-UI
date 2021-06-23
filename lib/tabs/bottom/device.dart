@@ -1,4 +1,6 @@
+import 'package:farm_ui/pages/device_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../adddevice.dart';
 
 class Device extends StatelessWidget {
@@ -20,8 +22,13 @@ class Device extends StatelessWidget {
                     child: Column(
                       children: [
                         ListTile(
-                          title: Text("Device $index"),
+                          title: Text("Device ${index + 1}"),
                           trailing: Icon(Icons.arrow_forward_ios),
+                          onTap: () => Get.to(
+                            () => DeviceScreen(
+                              deviceName: "Device ${index + 1}",
+                            ),
+                          ),
                         ),
                         Divider(
                           thickness: 2,
