@@ -9,7 +9,7 @@ class AddWaterSupply extends StatelessWidget {
     var heightFactor = MediaQuery.of(context).size.height / 812;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Add Farm"),
+        title: Text("Add Water Supply"),
         backgroundColor: Colors.green[400],
       ),
       body: NotificationListener<OverscrollIndicatorNotification>(
