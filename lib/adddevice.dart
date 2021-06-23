@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 
 class AddDevice extends StatefulWidget {
-  const AddDevice({ Key key }) : super(key: key);
+  const AddDevice({Key? key}) : super(key: key);
 
   @override
   _AddDeviceState createState() => _AddDeviceState();
 }
 
 class _AddDeviceState extends State<AddDevice> {
-
-  int _value = 1;
+  int? _value = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -33,9 +32,7 @@ class _AddDeviceState extends State<AddDevice> {
               height: 16,
             ),
             TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder()
-              ),
+              decoration: InputDecoration(border: OutlineInputBorder()),
             ),
             SizedBox(
               height: 16,
@@ -51,9 +48,7 @@ class _AddDeviceState extends State<AddDevice> {
               height: 16,
             ),
             TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder()
-              ),
+              decoration: InputDecoration(border: OutlineInputBorder()),
             ),
             SizedBox(
               height: 16,
@@ -69,37 +64,31 @@ class _AddDeviceState extends State<AddDevice> {
               height: 16,
             ),
             DropdownButton(
-              isExpanded: true,
-              value: _value,
-              items: [
-                DropdownMenuItem(
-                  child: Text("AGS"),
-                  value: 1,
-                ),
-                DropdownMenuItem(
-                  child: Text("SOI"),
-                  value: 2,
-                ),
-                DropdownMenuItem(
-                  child: Text("WQ"),
-                  value: 3
-                ),
-                DropdownMenuItem(
-                    child: Text("WS"),
-                    value: 4
-                )
-              ],
-              onChanged: (value) {
-                setState(() {
-                  _value = value;
-                });
-              }),
+                isExpanded: true,
+                value: _value,
+                items: [
+                  DropdownMenuItem(
+                    child: Text("AGS"),
+                    value: 1,
+                  ),
+                  DropdownMenuItem(
+                    child: Text("SOI"),
+                    value: 2,
+                  ),
+                  DropdownMenuItem(child: Text("WQ"), value: 3),
+                  DropdownMenuItem(child: Text("WS"), value: 4)
+                ],
+                onChanged: (int? value) {
+                  setState(() {
+                    _value = value;
+                  });
+                }),
           ],
-        ), 
-      ) ,
+        ),
+      ),
       floatingActionButton: FloatingActionButton.extended(
         backgroundColor: Colors.green,
-        onPressed: (){},
+        onPressed: () {},
         icon: Icon(Icons.add),
         label: Text("Add"),
       ),
@@ -107,4 +96,3 @@ class _AddDeviceState extends State<AddDevice> {
     );
   }
 }
-

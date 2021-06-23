@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:farm_new/adddevice.dart';
+import '../../adddevice.dart';
 
 class Device extends StatelessWidget {
-  const Device({ Key key }) : super(key: key);
+  const Device({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class Device extends StatelessWidget {
             Expanded(
               child: ListView.builder(
                 itemCount: 5,
-                itemBuilder: (BuildContext context, int index){
+                itemBuilder: (BuildContext context, int index) {
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
@@ -37,7 +37,7 @@ class Device extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton.extended(
         backgroundColor: Colors.green,
-        onPressed: (){
+        onPressed: () {
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => AddDevice()),
@@ -48,6 +48,5 @@ class Device extends StatelessWidget {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
-    
   }
 }
