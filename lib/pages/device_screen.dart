@@ -39,7 +39,8 @@ class _DeviceScreenState extends State<DeviceScreen> {
         body: TabBarView(
           children: [
             DeviceProperties(),
-            Container(),
+            
+            Logs(),
           ],
         ),
       ),
@@ -84,3 +85,50 @@ class DeviceProperties extends StatelessWidget {
         });
   }
 }
+
+class Logs extends StatelessWidget {
+  const Logs({ Key? key }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    DateTime now = new DateTime.now() ;
+    return Scaffold(
+      body: new Container(
+        child: Column(
+          children: <Widget>[
+            Container(
+              child: Text(
+                '  Login Date : ${now.year} - ${now.month} - ${now.day}\nLogin Time : ${now.hour} : ${now.minute} : ${now.second} Message : ',
+                style: TextStyle(fontSize: 26, height: 3),
+                textAlign: TextAlign.center,
+              ),
+
+            ),
+            Container(
+              child: SizedBox(
+                width: 200.0,
+                height: 100.0,  
+                child: Card(
+                  color: Colors.green,
+                  child: Center(
+                    child: Text(
+                      "Message xyz",
+                        style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+
+    
+      
+      
+    
+    
+  }
+}
+
